@@ -3,22 +3,23 @@
 
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>iDai.ly Digital | Editorial Web Design</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-<script id="tailwind-config">
+<script>
 tailwind.config = {
   darkMode: "class",
   theme: {
     extend: {
       colors: {
         primary: "#9e3d11",
-        surface: "#fff8f5"
+        surface: "#fff8f5",
+        onSurface: "#261911"
       },
       fontFamily: {
         headline: ["Newsreader", "serif"],
@@ -37,16 +38,17 @@ tailwind.config = {
 
 </head>
 
-<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<body class="bg-surface text-onSurface font-body">
 
 <!-- NAV -->
-<nav class="w-full top-0 sticky z-50 bg-[#fff8f5] shadow">
+<nav class="w-full sticky top-0 z-50 bg-[#fff8f5] shadow">
   <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
-    <a class="text-2xl font-bold font-headline" href="#">
-      iDai.ly Digital
-    </a>
 
-    <div class="hidden md:flex items-center space-x-10">
+    <div class="text-2xl font-bold font-headline">
+      iDai.ly Digital
+    </div>
+
+    <div class="hidden md:flex gap-10">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -55,11 +57,12 @@ tailwind.config = {
     <a class="bg-primary text-white px-8 py-3 rounded-full font-bold" href="#contact">
       Start Your Project
     </a>
+
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="relative pt-20 pb-32 px-8">
+<section class="pt-24 pb-32 px-8">
   <div class="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
     <div>
@@ -73,7 +76,7 @@ tailwind.config = {
         I build one-page websites for small businesses — professional, affordable, and ready in 48 hours.
       </p>
 
-      <a class="bg-primary text-white px-10 py-5 rounded-full inline-block mt-10 font-bold" href="#contact">
+      <a href="#contact" class="mt-10 inline-block bg-primary text-white px-10 py-5 rounded-full font-bold">
         Start Your Project
       </a>
     </div>
@@ -81,74 +84,88 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- SERVICES (placeholder preserved structure) -->
+<section id="services" class="py-32 px-8">
+  <div class="max-w-screen-2xl mx-auto">
+    <h2 class="text-5xl font-headline font-bold mb-12">What I Build</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="p-10 bg-white rounded-xl shadow">
+        <h3 class="font-bold text-2xl mb-2">One Page Website</h3>
+        <p class="opacity-70">Fast, clean, mobile optimized.</p>
+        <div class="text-primary text-3xl mt-6">$300</div>
+      </div>
+
+      <div class="p-10 bg-white rounded-xl shadow">
+        <h3 class="font-bold text-2xl mb-2">Maintenance</h3>
+        <p class="opacity-70">Hosting + updates handled.</p>
+        <div class="text-primary text-3xl mt-6">$55/mo</div>
+      </div>
+
+      <div class="p-10 bg-white rounded-xl shadow">
+        <h3 class="font-bold text-2xl mb-2">Add-ons</h3>
+        <p class="opacity-70">Forms, automation, etc.</p>
+        <div class="text-primary text-3xl mt-6">From $20</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="bg-[#FAF6F0] py-32 px-8">
 
-<div class="max-w-4xl mx-auto">
+  <div class="max-w-4xl mx-auto">
 
-  <div class="text-center mb-16">
-    <h2 class="text-5xl font-headline font-bold">
-      Let's Get Your Business Online.
-    </h2>
-    <p class="text-xl italic">
-      Fill out the form below and I'll reach out within 24 hours.
-    </p>
-  </div>
-
-  <!-- FORM -->
-  <form
-    action="https://formspree.io/f/xyklnyqq"
-    method="POST"
-    class="space-y-6 bg-white p-10 rounded-xl shadow-lg"
-    onsubmit="trackLead()"
-  >
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <input name="name" class="w-full px-6 py-4 rounded-full border" placeholder="Name" type="text" required/>
-
-      <input name="business" class="w-full px-6 py-4 rounded-full border" placeholder="Business Name" type="text"/>
-
-      <input name="phone" class="w-full px-6 py-4 rounded-full border" placeholder="Phone" type="tel"/>
-
-      <input name="email" class="w-full px-6 py-4 rounded-full border" placeholder="Email" type="email" required/>
-
+    <div class="text-center mb-12">
+      <h2 class="text-5xl font-headline font-bold">
+        Let's Get Your Business Online.
+      </h2>
+      <p class="text-xl italic mt-4">
+        Fill out the form below and I'll reach out within 24 hours.
+      </p>
     </div>
 
-    <textarea name="message" class="w-full px-6 py-4 rounded-xl border" placeholder="Tell me about your project..." rows="5"></textarea>
+    <!-- FORMSPREE -->
+    <form
+      action="https://formspree.io/f/xyklnyqq"
+      method="POST"
+      class="space-y-6 bg-white p-10 rounded-xl shadow-lg"
+    >
 
-    <button class="w-full bg-primary text-white py-5 rounded-full font-bold" type="submit">
-      Submit Service Request
-    </button>
+      <input name="name" class="w-full p-4 rounded-xl border" placeholder="Name" required/>
+      <input name="business" class="w-full p-4 rounded-xl border" placeholder="Business Name"/>
+      <input name="phone" class="w-full p-4 rounded-xl border" placeholder="Phone"/>
+      <input name="email" class="w-full p-4 rounded-xl border" placeholder="Email" required/>
 
-  </form>
+      <textarea name="message" class="w-full p-4 rounded-xl border" rows="5" placeholder="Tell me about your project"></textarea>
 
-  <!-- CONTACT INFO -->
-  <div class="mt-12 text-center space-y-2">
-    <div><a href="mailto:theiDai.ly@outlook.com">theiDai.ly@outlook.com</a></div>
-    <div><a href="tel:+16318133348">(631) 813-3348</a></div>
-  </div>
+      <button class="w-full bg-primary text-white py-5 rounded-full font-bold">
+        Submit Service Request
+      </button>
 
-  <!-- CALENDLY -->
-  <div class="mt-16">
-    <div class="calendly-inline-widget"
-      data-url="https://calendly.com/theidai-ly/30min?primary_color=e16d58"
-      style="min-width:320px;height:700px;">
+    </form>
+
+    <!-- CONTACT -->
+    <div class="mt-10 text-center space-y-2">
+      <div><a href="mailto:theiDai.ly@outlook.com">theiDai.ly@outlook.com</a></div>
+      <div><a href="tel:+16318133348">(631) 813-3348</a></div>
     </div>
-  </div>
 
-</div>
+    <!-- CALENDLY -->
+    <div class="mt-16">
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/theidai-ly/30min?primary_color=e16d58"
+        style="min-width:320px;height:700px;">
+      </div>
+    </div>
+
+  </div>
 
 </section>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<script>
-function trackLead() {
-  console.log("Lead submitted");
-  localStorage.setItem("lead_submitted", "true");
-}
-</script>
 
 </body>
 </html>
