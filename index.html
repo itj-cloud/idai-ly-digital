@@ -1,221 +1,154 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en"><head>
+<html class="scroll-smooth" lang="en">
+
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>iDai.ly Digital | Editorial Web Design</title>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "error-container": "#ffdad6",
-                      "on-surface": "#261911",
-                      "on-primary": "#ffffff",
-                      "on-surface-variant": "#57423b",
-                      "inverse-surface": "#3c2d25",
-                      "secondary-container": "#feb8ab",
-                      "on-secondary-container": "#7a473d",
-                      "primary-fixed": "#ffdbce",
-                      "surface": "#fff8f5",
-                      "on-secondary": "#ffffff",
-                      "surface-variant": "#f7ddd1",
-                      "on-secondary-fixed": "#351009",
-                      "on-error-container": "#93000a",
-                      "on-tertiary-fixed": "#241a00",
-                      "on-tertiary-container": "#503d00",
-                      "on-primary-container": "#fffbff",
-                      "surface-container-highest": "#f7ddd1",
-                      "primary-container": "#bf5428",
-                      "on-tertiary-fixed-variant": "#594400",
-                      "primary-fixed-dim": "#ffb59a",
-                      "surface-container": "#ffeadf",
-                      "surface-dim": "#eed5c9",
-                      "surface-container-high": "#fde3d6",
-                      "tertiary-fixed-dim": "#edc147",
-                      "on-primary-fixed": "#380d00",
-                      "surface-tint": "#a23f13",
-                      "on-tertiary": "#ffffff",
-                      "tertiary-container": "#cfa62d",
-                      "surface-bright": "#fff8f5",
-                      "on-error": "#ffffff",
-                      "on-background": "#261911",
-                      "on-primary-fixed-variant": "#802a00",
-                      "tertiary": "#765b00",
-                      "secondary-fixed": "#ffdad3",
-                      "inverse-primary": "#ffb59a",
-                      "tertiary-fixed": "#ffdf93",
-                      "secondary-fixed-dim": "#fbb6a8",
-                      "primary": "#9e3d11",
-                      "outline-variant": "#dec0b6",
-                      "background": "#fff8f5",
-                      "on-secondary-fixed-variant": "#6a3930",
-                      "outline": "#8a7269",
-                      "secondary": "#865046",
-                      "surface-container-lowest": "#ffffff",
-                      "inverse-on-surface": "#ffede5",
-                      "surface-container-low": "#fff1eb",
-                      "error": "#ba1a1a"
-              },
-              "borderRadius": {
-                      "DEFAULT": "1rem",
-                      "lg": "2rem",
-                      "xl": "3rem",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["Newsreader", "serif"],
-                      "body": ["Manrope", "sans-serif"],
-                      "label": ["Manrope", "sans-serif"]
-              }
-            },
-          }
-        }
-    </script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#9e3d11",
+        surface: "#fff8f5"
+      },
+      fontFamily: {
+        headline: ["Newsreader", "serif"],
+        body: ["Manrope", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .wavy-divider {
-            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="black"/></svg>');
-            mask-repeat: no-repeat;
-            mask-size: cover;
-        }
-        .blob-shape {
-            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-        }
-        .editorial-underline {
-            background-image: linear-gradient(120deg, #feb8ab 0%, #feb8ab 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 0.3em;
-            background-position: 0 88%;
-        }
-    </style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+</style>
+
 </head>
 
 <body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
 
 <!-- NAV -->
-<nav class="w-full top-0 sticky z-50 bg-[#fff8f5] dark:bg-[#1a1411] shadow-[0px_20px_40px_rgba(38,25,17,0.06)]">
-<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
-<a class="text-2xl font-bold text-[#261911] dark:text-[#fff8f5] font-headline tracking-tight group" href="#">
-<span class="inline-flex items-center justify-center w-10 h-10 border-2 border-primary rounded-full mr-2 group-hover:bg-primary group-hover:text-white transition-all duration-300">iD</span>
-iDai.ly Digital
-</a>
+<nav class="w-full top-0 sticky z-50 bg-[#fff8f5] shadow">
+  <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+    <a class="text-2xl font-bold font-headline" href="#">
+      iDai.ly Digital
+    </a>
 
-<div class="hidden md:flex items-center space-x-10">
-<a href="#work">Work</a>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
+    <div class="hidden md:flex items-center space-x-10">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-<a class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold" href="#contact">Start Your Project</a>
-</div>
+    <a class="bg-primary text-white px-8 py-3 rounded-full font-bold" href="#contact">
+      Start Your Project
+    </a>
+  </div>
 </nav>
 
-<!-- HERO (UNCHANGED) -->
-<section class="relative overflow-hidden pt-20 pb-32 px-8">
-<div class="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<!-- HERO -->
+<section class="relative pt-20 pb-32 px-8">
+  <div class="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-<div class="z-10">
-<h1 class="text-6xl md:text-8xl font-headline font-bold leading-[1.1] text-on-surface tracking-tighter">
-Simple Websites.<br/>
-<span class="text-primary italic font-medium">Real Results.</span><br/>
-Built Fast.
-</h1>
+    <div>
+      <h1 class="text-6xl md:text-8xl font-headline font-bold leading-tight">
+        Simple Websites.<br/>
+        <span class="text-primary italic">Real Results.</span><br/>
+        Built Fast.
+      </h1>
 
-<p class="mt-8 text-xl text-on-surface-variant max-w-lg leading-relaxed">
-I build one-page websites for small businesses — professional, affordable, and ready in 48 hours.
-</p>
+      <p class="mt-8 text-xl opacity-80 max-w-lg">
+        I build one-page websites for small businesses — professional, affordable, and ready in 48 hours.
+      </p>
 
-<a class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold inline-block mt-10" href="#contact">
-Start Your Project
-</a>
-</div>
+      <a class="bg-primary text-white px-10 py-5 rounded-full inline-block mt-10 font-bold" href="#contact">
+        Start Your Project
+      </a>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="bg-[#FAF6F0] py-32 px-8">
 
 <div class="max-w-4xl mx-auto">
-<div class="text-center mb-16">
-<h2 class="text-5xl font-headline font-bold">Let's Get Your Business Online.</h2>
-<p class="text-xl italic">Fill out the form below and I'll reach out within 24 hours.</p>
+
+  <div class="text-center mb-16">
+    <h2 class="text-5xl font-headline font-bold">
+      Let's Get Your Business Online.
+    </h2>
+    <p class="text-xl italic">
+      Fill out the form below and I'll reach out within 24 hours.
+    </p>
+  </div>
+
+  <!-- FORM -->
+  <form
+    action="https://formspree.io/f/xyklnyqq"
+    method="POST"
+    class="space-y-6 bg-white p-10 rounded-xl shadow-lg"
+    onsubmit="trackLead()"
+  >
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <input name="name" class="w-full px-6 py-4 rounded-full border" placeholder="Name" type="text" required/>
+
+      <input name="business" class="w-full px-6 py-4 rounded-full border" placeholder="Business Name" type="text"/>
+
+      <input name="phone" class="w-full px-6 py-4 rounded-full border" placeholder="Phone" type="tel"/>
+
+      <input name="email" class="w-full px-6 py-4 rounded-full border" placeholder="Email" type="email" required/>
+
+    </div>
+
+    <textarea name="message" class="w-full px-6 py-4 rounded-xl border" placeholder="Tell me about your project..." rows="5"></textarea>
+
+    <button class="w-full bg-primary text-white py-5 rounded-full font-bold" type="submit">
+      Submit Service Request
+    </button>
+
+  </form>
+
+  <!-- CONTACT INFO -->
+  <div class="mt-12 text-center space-y-2">
+    <div><a href="mailto:theiDai.ly@outlook.com">theiDai.ly@outlook.com</a></div>
+    <div><a href="tel:+16318133348">(631) 813-3348</a></div>
+  </div>
+
+  <!-- CALENDLY -->
+  <div class="mt-16">
+    <div class="calendly-inline-widget"
+      data-url="https://calendly.com/theidai-ly/30min?primary_color=e16d58"
+      style="min-width:320px;height:700px;">
+    </div>
+  </div>
+
 </div>
 
-<!-- FORMSPREE FIXED -->
-<form class="space-y-6 bg-white p-10 rounded-xl shadow-lg"
-action="https://formspree.io/f/xyklnyqq"
-method="POST">
-
-<div class="grid md:grid-cols-2 gap-6">
-
-<div>
-<label>Name</label>
-<input name="name" class="w-full px-6 py-4 rounded-full" type="text"/>
-</div>
-
-<div>
-<label>Business Name</label>
-<input name="business" class="w-full px-6 py-4 rounded-full" type="text"/>
-</div>
-
-</div>
-
-<div class="grid md:grid-cols-2 gap-6">
-
-<div>
-<label>Phone</label>
-<input name="phone" class="w-full px-6 py-4 rounded-full" type="tel"/>
-</div>
-
-<div>
-<label>Email</label>
-<input name="email" class="w-full px-6 py-4 rounded-full" type="email"/>
-</div>
-
-</div>
-
-<div>
-<label>What do you need?</label>
-<textarea name="message" class="w-full px-6 py-4 rounded-xl"></textarea>
-</div>
-
-<button class="w-full bg-primary text-white py-5 rounded-full font-bold" type="submit">
-Submit Service Request
-</button>
-</form>
-
-<!-- CALENDLY ADDED -->
-<div class="mt-16">
-<div class="calendly-inline-widget"
-data-url="https://calendly.com/theidai-ly/30min?primary_color=e16d58"
-style="min-width:320px;height:700px;"></div>
+</section>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-</div>
 
-<!-- CONTACT INFO ADDED -->
-<div class="mt-12 text-center space-y-2">
-
-<div>
-<a href="mailto:thedai.ly@outlook.com">theiDai.ly@outlook.com</a>
-</div>
-
-<div>
-<a href="tel:+16318133348">(631) 813-3348</a>
-</div>
-
-</div>
-
-</div>
-</section>
+<script>
+function trackLead() {
+  console.log("Lead submitted");
+  localStorage.setItem("lead_submitted", "true");
+}
+</script>
 
 </body>
 </html>
