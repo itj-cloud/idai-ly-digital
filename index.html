@@ -1,103 +1,71 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>iDai.ly Digital | Editorial Web Design</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "#9e3d11",
-        surface: "#fff8f5",
-        "on-surface": "#261911",
-        "on-surface-variant": "#57423b",
-        "secondary-container": "#feb8ab"
-      },
-      fontFamily: {
-        headline: ["Newsreader", "serif"],
-        body: ["Manrope", "sans-serif"]
-      }
-    }
-  }
-}
-</script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+body {
+  font-family: Manrope, sans-serif;
 }
-.blob-shape {
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+.blob {
   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
 }
 </style>
 
 </head>
 
-<body class="bg-surface text-on-surface font-body">
+<body class="bg-[#fff8f5] text-[#261911]">
 
 <!-- NAV -->
-<nav class="w-full sticky top-0 z-50 bg-white shadow">
-<div class="flex justify-between items-center px-8 py-6">
+<nav class="sticky top-0 bg-white shadow px-8 py-6 flex justify-between items-center">
   <div class="font-bold text-xl">iDai.ly Digital</div>
-  <a class="bg-primary text-white px-6 py-2 rounded-full" href="#contact">Start Project</a>
-</div>
+  <a href="#contact" class="bg-[#9e3d11] text-white px-6 py-2 rounded-full">Start Project</a>
 </nav>
 
 <!-- HERO -->
-<section class="px-8 py-24">
+<section class="px-8 py-24 text-center">
   <h1 class="text-5xl font-bold">Simple Websites. Real Results.</h1>
-  <p class="mt-4 text-lg">Built fast. Clean. Affordable.</p>
+  <p class="mt-4 text-lg opacity-70">Built fast. Clean. Affordable.</p>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT + CALENDLY -->
 <section id="contact" class="px-8 py-24 bg-[#FAF6F0]">
 
-<div class="max-w-3xl mx-auto">
+<div class="max-w-4xl mx-auto">
 
-<h2 class="text-4xl font-bold mb-10">Let’s Get Started</h2>
+<h2 class="text-4xl font-bold mb-10 text-center">Let’s Get Started</h2>
 
 <!-- CALENDLY -->
 <div class="mb-12">
 <div class="calendly-inline-widget"
-     data-url="https://calendly.com/theidai-ly/30min?primary_color=e16d58"
-     style="min-width:320px;height:700px;"></div>
+data-url="https://calendly.com/theidai-ly/30min?primary_color=e16d58"
+style="min-width:320px;height:700px;"></div>
+
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </div>
 
-<!-- FORM -->
-<form action="https://formspree.io/f/xyklnyqq" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow">
+<!-- FORMSPREE FORM (FIXED - ONLY ONE FORM) -->
+<form action="https://formspree.io/f/xyklnyqq" method="POST" class="bg-white p-8 rounded-xl shadow space-y-4">
 
-<div>
-<input name="name" required class="w-full p-3 border rounded" placeholder="Name" type="text"/>
-</div>
+<input name="name" required placeholder="Name" class="w-full p-3 border rounded"/>
+<input name="business" placeholder="Business Name" class="w-full p-3 border rounded"/>
+<input name="phone" placeholder="Phone" class="w-full p-3 border rounded"/>
+<input name="email" type="email" required placeholder="Email" class="w-full p-3 border rounded"/>
+<textarea name="message" required placeholder="Tell me about your project..." class="w-full p-3 border rounded h-32"></textarea>
 
-<div>
-<input name="business" class="w-full p-3 border rounded" placeholder="Business Name" type="text"/>
-</div>
-
-<div>
-<input name="phone" class="w-full p-3 border rounded" placeholder="Phone" type="tel"/>
-</div>
-
-<div>
-<input name="email" required class="w-full p-3 border rounded" placeholder="Email" type="email"/>
-</div>
-
-<div>
-<textarea name="message" required class="w-full p-3 border rounded" placeholder="Tell me about your project..." rows="5"></textarea>
-</div>
-
-<button class="w-full bg-primary text-white py-4 rounded-full font-bold" type="submit">
+<button type="submit" class="w-full bg-[#9e3d11] text-white py-4 rounded-full font-bold">
 Submit Request
 </button>
 
@@ -105,25 +73,23 @@ Submit Request
 
 <!-- CLICKABLE CONTACT -->
 <div class="mt-10 text-center space-y-2">
-
 <p>
 Email:
-<a class="text-primary font-bold" href="mailto:goog@gmail.com">goog@gmail.com</a>
+<a href="mailto:goog@gmail.com" class="text-[#9e3d11] font-bold">goog@gmail.com</a>
 </p>
 
 <p>
 Phone:
-<a class="text-primary font-bold" href="tel:6318133348">631-813-3348</a>
+<a href="tel:6318133348" class="text-[#9e3d11] font-bold">631-813-3348</a>
 </p>
-
 </div>
 
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-10 text-center text-sm opacity-70">
-  <p>© 2024 iDai.ly Digital</p>
+<footer class="text-center py-10 text-sm opacity-70">
+© 2024 iDai.ly Digital
 </footer>
 
 </body>
